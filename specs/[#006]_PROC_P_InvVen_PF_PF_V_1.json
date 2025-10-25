@@ -162,6 +162,11 @@
           "entity": "GLOBAL",
           "name": "NOME_FALECIDO",
           "placeholder": "{NOME_FALECIDO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "DATA-OBITO",
+          "placeholder": "{DATA-OBITO}"
         }
       ]
     }
@@ -197,6 +202,7 @@
     "END_NUMERO_OUTORGADO",
     "END_CIDADE_OUTORGADO",
     "END_UF_OUTORGADO",
-    "NOME_FALECIDO"
+    "NOME_FALECIDO",
+    "DATA-OBITO"
   ]
 }

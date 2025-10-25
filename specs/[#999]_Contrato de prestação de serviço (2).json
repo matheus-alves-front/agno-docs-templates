@@ -1,0 +1,208 @@
+{
+  "name": "[#999]_Contrato de prestação de serviço (2)",
+  "source": "[#999]_Contrato de prestação de serviço (2).docx",
+  "multiplicity": "[1-1]",
+  "entities": [
+    "CONTRATANTE",
+    "PRESTADORA"
+  ],
+  "groups": [
+    {
+      "id": "G1",
+      "label": "Qualificação CONTRATANTE",
+      "fields": [
+        {
+          "entity": "CONTRATANTE",
+          "name": "Razão_Social",
+          "placeholder": "{Razão_Social_Contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "CNPJ",
+          "placeholder": "{CNPJ_Contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "endereço",
+          "placeholder": "{endereço_contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "CEP",
+          "placeholder": "{CEP_contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "nome_fantazia",
+          "placeholder": "{nome_fantazia_contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "nome_representante_legal",
+          "placeholder": "{nome_representante_legal_contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "estado_civil_representante_legal",
+          "placeholder": "{estado_civil_representante_legal_contratante}"
+        },
+        {
+          "entity": "CONTRATANTE",
+          "name": "CPF_representante_legal",
+          "placeholder": "{CPF_representante_legal_contratante}"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "label": "Qualificação PRESTADORA",
+      "fields": [
+        {
+          "entity": "PRESTADORA",
+          "name": "Razão_Social",
+          "placeholder": "{Razão_Social_Prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "CNPJ",
+          "placeholder": "{CNPJ_Prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "endereço",
+          "placeholder": "{endereço_prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "CEP",
+          "placeholder": "{CEP_prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "nome_fantazia",
+          "placeholder": "{nome_fantazia_prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "nome_representante_legal",
+          "placeholder": "{nome_representante_legal_prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "estado_civil_representante_legal",
+          "placeholder": "{estado_civil_representante_legal_prestadora}"
+        },
+        {
+          "entity": "PRESTADORA",
+          "name": "CPF_representante_legal",
+          "placeholder": "{CPF_representante_legal_prestadora}"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "label": "Dados do Ato",
+      "fields": [
+        {
+          "entity": "GLOBAL",
+          "name": "escopo_de_desenvolvimento",
+          "placeholder": "{escopo_de_desenvolvimento}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "data_inicio",
+          "placeholder": "{data_inicio}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "dias_briefing",
+          "placeholder": "{dias_briefing}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "dias_entrega",
+          "placeholder": "{dias_entrega}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "valor_do_contrato",
+          "placeholder": "{valor_do_contrato}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "numero_de_parcelas",
+          "placeholder": "{numero_de_parcelas}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "data_parcela1",
+          "placeholder": "{data_parcela1}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "valor_parcel1",
+          "placeholder": "{valor_parcel1}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "data_parcela2",
+          "placeholder": "{data_parcela2}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "valor_parcel2",
+          "placeholder": "{valor_parcel2}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "dados_bancários",
+          "placeholder": "{dados_bancários}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "foro_cidade",
+          "placeholder": "{foro_cidade}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "foro_estado",
+          "placeholder": "{foro_estado}"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "casais": false
+  },
+  "all_placeholders": [
+    "Razão_Social_Prestadora",
+    "CNPJ_Prestadora",
+    "endereço_prestadora",
+    "CEP_prestadora",
+    "nome_fantazia_prestadora",
+    "nome_representante_legal_prestadora",
+    "estado_civil_representante_legal_prestadora",
+    "CPF_representante_legal_prestadora",
+    "Razão_Social_Contratante",
+    "CNPJ_Contratante",
+    "endereço_contratante",
+    "CEP_contratante",
+    "nome_fantazia_contratante",
+    "nome_representante_legal_contratante",
+    "estado_civil_representante_legal_contratante",
+    "CPF_representante_legal_contratante",
+    "escopo_de_desenvolvimento",
+    "data_inicio",
+    "dias_briefing",
+    "dias_entrega",
+    "valor_do_contrato",
+    "numero_de_parcelas",
+    "data_parcela1",
+    "valor_parcel1",
+    "data_parcela2",
+    "valor_parcel2",
+    "dados_bancários",
+    "foro_cidade",
+    "foro_estado"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "[#322]_Contrato de prestação de serviço",
+  "source": "[#322]_Contrato de prestação de serviço.docx",
+  "multiplicity": "[1-1]",
+  "entities": [],
+  "groups": [],
+  "meta": {
+    "casais": false
+  },
+  "all_placeholders": []
+}

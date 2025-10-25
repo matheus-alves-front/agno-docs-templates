@@ -2,10 +2,12 @@ from typing import Dict, Any
 from docx import Document
 import re
 import os
+import unicodedata
 from collections import OrderedDict
 from .logging_utils import setup_logger, jlog
 
-PLACEHOLDER_RE = re.compile(r"\{([A-Z0-9_]+)(?::([^}]+))?\}")
+# Accept broader Unicode/ASCII placeholder names. Avoid greedy match ending at first closing brace.
+PLACEHOLDER_RE = re.compile(r"\{([^{}:\s]+)(?::([^{}]+))?\}")
 ENTITY_SUFFIXES = {
     "OUTORGANTE",
     "OUTORGADO",
@@ -23,6 +25,56 @@ ENTITY_SUFFIXES = {
     "COMPRADORA",
     "VENDEDORA",
 }
+
+ENTITY_MIN_OCCURRENCES = 2
+ENTITY_FIELD_HINTS = {
+    "NOME",
+    "CPF",
+    "RG",
+    "CNPJ",
+    "ENDERECO",
+    "LOGRADOURO",
+    "BAIRRO",
+    "CEP",
+    "TELEFONE",
+    "CELULAR",
+    "WHATSAPP",
+    "EMAIL",
+    "REPRESENTANTE",
+    "SOCIO",
+    "SOCIA",
+    "SOCIOS",
+    "SOCIAS",
+    "CONJUGE",
+    "ESPOSO",
+    "ESPOSA",
+    "NACIONALIDADE",
+    "NATURALIDADE",
+    "PROFISSAO",
+    "ESTADO",
+    "UF",
+    "MUNICIPIO",
+    "CIDADE",
+    "INSCRICAO",
+    "RAZAO",
+    "SOCIAL",
+    "RAZAOSOCIAL",
+    "INSCRICAOESTADUAL",
+    "PODERES",
+    "CAPITAL",
+    "DATA",
+    "NUMERO",
+    "DOCUMENTO",
+}
+
+
+def _norm_token(token: str) -> str:
+    return token.strip().casefold()
+
+
+def _strip_accents(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text)
+    return "".join(ch for ch in normalized if not unicodedata.combining(ch))
 
 
 def read_docx_placeholders(path: str) -> Dict[str, Any]:
@@ -77,18 +129,72 @@ def build_spec_from_docx(path: str) -> Dict[str, Any]:
     entities = set()
     fields_by_key: "OrderedDict[tuple[str, str], Dict[str, Any]]" = OrderedDict()
     entity_max_indices: Dict[str, int] = {}
+    # Pre-compute dynamic entity candidates based on placeholder suffix frequency.
+    suffix_counts: Dict[str, int] = {}
+    suffix_original: Dict[str, str] = {}
+    suffix_hint_tokens: Dict[str, set[str]] = {}
     for placeholder in placeholders:
         name = placeholder["name"]
-        parts = name.split("_")
+        parts = [part for part in name.split("_") if part]
+        if not parts:
+            continue
+        candidate = None
+        if parts[-1].isdigit() and len(parts) >= 2:
+            candidate = parts[-2]
+        else:
+            candidate = parts[-1]
+        if not candidate:
+            continue
+        norm = _norm_token(candidate)
+        if not norm:
+            continue
+        suffix_counts[norm] = suffix_counts.get(norm, 0) + 1
+        suffix_original.setdefault(norm, candidate)
+        base_parts = parts[:-2] if parts[-1].isdigit() and len(parts) >= 2 else parts[:-1]
+        if base_parts:
+            hints = suffix_hint_tokens.setdefault(norm, set())
+            for base_part in base_parts:
+                normalized = _strip_accents(base_part).replace(" ", "").upper()
+                if normalized:
+                    hints.add(normalized)
+
+    entity_lookup: Dict[str, str] = {suffix.casefold(): suffix for suffix in ENTITY_SUFFIXES}
+    for norm, count in suffix_counts.items():
+        if count < ENTITY_MIN_OCCURRENCES:
+            continue
+        if norm not in entity_lookup:
+            hints = suffix_hint_tokens.get(norm, set())
+            if not (hints and hints.intersection(ENTITY_FIELD_HINTS)):
+                continue
+            # Use uppercase to align with existing specs.
+            entity_lookup[norm] = suffix_original[norm].upper()
+    for placeholder in placeholders:
+        name = placeholder["name"]
+        parts = [part for part in name.split("_") if part]
         entity = None
         base = name
-        if len(parts) >= 3 and parts[-2] in ENTITY_SUFFIXES and parts[-1].isdigit():
-            entity = parts[-2]
-            base = "_".join(parts[:-2])
-        elif len(parts) >= 2 and parts[-1] in ENTITY_SUFFIXES:
-            entity = parts[-1]
-            base = "_".join(parts[:-1])
+        number_idx = None
+        candidate = None
+        if len(parts) >= 2 and parts[-1].isdigit():
+            candidate = parts[-2]
+            number_idx = parts[-1]
+        elif parts:
+            candidate = parts[-1]
 
+        if candidate:
+            norm_candidate = _norm_token(candidate)
+            lookup_entity = entity_lookup.get(norm_candidate)
+            if lookup_entity:
+                entity = lookup_entity
+                if number_idx and len(parts) >= 2:
+                    base_parts = parts[:-2]
+                else:
+                    base_parts = parts[:-1]
+                if base_parts:
+                    base = "_".join(base_parts)
+                else:
+                    base = candidate
+        # Track known entities for grouping.
         if entity:
             entities.add(entity)
 
@@ -100,9 +206,9 @@ def build_spec_from_docx(path: str) -> Dict[str, Any]:
                 "placeholder": placeholder["raw"],
             }
 
-        if entity and len(parts) >= 3 and parts[-1].isdigit():
+        if entity and number_idx:
             try:
-                idx = int(parts[-1])
+                idx = int(number_idx)
             except ValueError:
                 idx = 1
             if idx >= 1:

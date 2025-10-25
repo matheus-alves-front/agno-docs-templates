@@ -66,14 +66,24 @@ def collect_counts_for_v(v_entities: List[str], casais: bool, defaults: Dict[str
     return counts
 
 
+def _match_placeholder(target: str, all_names: List[str]) -> str | None:
+    target_cf = target.casefold()
+    for name in all_names:
+        if name.casefold() == target_cf:
+            return name
+    return None
+
+
 def best_placeholder_key(base: str, entity: str, idx: int, all_names: List[str]) -> str | None:
     numbered_name = f"{base}_{entity}_{idx}"
-    if numbered_name in all_names:
-        return f"{{{numbered_name}}}"
+    match = _match_placeholder(numbered_name, all_names)
+    if match:
+        return f"{{{match}}}"
     if idx == 1:
         simple_name = f"{base}_{entity}"
-        if simple_name in all_names:
-            return f"{{{simple_name}}}"
+        match = _match_placeholder(simple_name, all_names)
+        if match:
+            return f"{{{match}}}"
     return None
 
 

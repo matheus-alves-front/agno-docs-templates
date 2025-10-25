@@ -3,11 +3,48 @@
   "source": "[#007]_PROC_P_Seg_PF_PJ_1_1.docx",
   "multiplicity": "[1-1]",
   "entities": [
+    "EMPRESA",
     "OUTORGANTE"
   ],
   "groups": [
     {
       "id": "G1",
+      "label": "Qualificação EMPRESA",
+      "fields": [
+        {
+          "entity": "EMPRESA",
+          "name": "NOME",
+          "placeholder": "{NOME_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_UF",
+          "placeholder": "{END_UF_EMPRESA}"
+        }
+      ]
+    },
+    {
+      "id": "G2",
       "label": "Qualificação OUTORGANTE",
       "fields": [
         {
@@ -73,7 +110,7 @@
       ]
     },
     {
-      "id": "G2",
+      "id": "G3",
       "label": "Dados do Ato",
       "fields": [
         {
@@ -100,36 +137,6 @@
           "entity": "GLOBAL",
           "name": "ANO_NUMERAL",
           "placeholder": "{ANO_NUMERAL}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NOME_EMPRESA",
-          "placeholder": "{NOME_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_LOGRADOURO_EMPRESA",
-          "placeholder": "{END_LOGRADOURO_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_BAIRRO_EMPRESA",
-          "placeholder": "{END_BAIRRO_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_NUMERO_EMPRESA",
-          "placeholder": "{END_NUMERO_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_CIDADE_EMPRESA",
-          "placeholder": "{END_CIDADE_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_UF_EMPRESA",
-          "placeholder": "{END_UF_EMPRESA}"
         }
       ]
     }

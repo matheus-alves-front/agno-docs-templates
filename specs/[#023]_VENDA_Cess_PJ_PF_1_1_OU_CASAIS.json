@@ -3,12 +3,112 @@
   "source": "[#023]_VENDA_Cess_PJ_PF_1_1_OU_CASAIS.docx",
   "multiplicity": "[1-1]",
   "entities": [
+    "EMPRESA",
+    "INTERVENIENTES",
     "OUTORGADO",
-    "OUTORGANTE"
+    "OUTORGANTE",
+    "SOCIA"
   ],
   "groups": [
     {
       "id": "G1",
+      "label": "Qualificação EMPRESA",
+      "fields": [
+        {
+          "entity": "EMPRESA",
+          "name": "NOME",
+          "placeholder": "{NOME_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_EMPRESA}"
+        },
+        {
+          "entity": "EMPRESA",
+          "name": "END_UF",
+          "placeholder": "{END_UF_EMPRESA}"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "label": "Qualificação INTERVENIENTES",
+      "fields": [
+        {
+          "entity": "INTERVENIENTES",
+          "name": "NOME",
+          "placeholder": "{NOME_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "RG",
+          "placeholder": "{RG_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "CPF",
+          "placeholder": "{CPF_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_INTERVENIENTES}"
+        },
+        {
+          "entity": "INTERVENIENTES",
+          "name": "END_UF",
+          "placeholder": "{END_UF_INTERVENIENTES}"
+        }
+      ]
+    },
+    {
+      "id": "G3",
       "label": "Qualificação OUTORGADO",
       "fields": [
         {
@@ -69,7 +169,7 @@
       ]
     },
     {
-      "id": "G2",
+      "id": "G4",
       "label": "Qualificação OUTORGANTE",
       "fields": [
         {
@@ -85,7 +185,63 @@
       ]
     },
     {
-      "id": "G3",
+      "id": "G5",
+      "label": "Qualificação SOCIA",
+      "fields": [
+        {
+          "entity": "SOCIA",
+          "name": "NOME",
+          "placeholder": "{NOME_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "RG",
+          "placeholder": "{RG_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "CPF",
+          "placeholder": "{CPF_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_SOCIA}"
+        },
+        {
+          "entity": "SOCIA",
+          "name": "END_UF",
+          "placeholder": "{END_UF_SOCIA}"
+        }
+      ]
+    },
+    {
+      "id": "G6",
       "label": "Dados do Ato",
       "fields": [
         {
@@ -115,36 +271,6 @@
         },
         {
           "entity": "GLOBAL",
-          "name": "NOME_EMPRESA",
-          "placeholder": "{NOME_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_LOGRADOURO_EMPRESA",
-          "placeholder": "{END_LOGRADOURO_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_BAIRRO_EMPRESA",
-          "placeholder": "{END_BAIRRO_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_NUMERO_EMPRESA",
-          "placeholder": "{END_NUMERO_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_CIDADE_EMPRESA",
-          "placeholder": "{END_CIDADE_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_UF_EMPRESA",
-          "placeholder": "{END_UF_EMPRESA}"
-        },
-        {
-          "entity": "GLOBAL",
           "name": "DATA_CONTRATO",
           "placeholder": "{DATA_CONTRATO}"
         },
@@ -157,111 +283,6 @@
           "entity": "GLOBAL",
           "name": "N_ARQUIVO",
           "placeholder": "{N_ARQUIVO}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NOME_SOCIA",
-          "placeholder": "{NOME_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NACIONALIDADE_SOCIA",
-          "placeholder": "{NACIONALIDADE_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "PROFISSAO_SOCIA",
-          "placeholder": "{PROFISSAO_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "RG_SOCIA",
-          "placeholder": "{RG_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "CPF_SOCIA",
-          "placeholder": "{CPF_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_LOGRADOURO_SOCIA",
-          "placeholder": "{END_LOGRADOURO_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_BAIRRO_SOCIA",
-          "placeholder": "{END_BAIRRO_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_NUMERO_SOCIA",
-          "placeholder": "{END_NUMERO_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_CIDADE_SOCIA",
-          "placeholder": "{END_CIDADE_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_UF_SOCIA",
-          "placeholder": "{END_UF_SOCIA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NOME_INTERVENIENTES",
-          "placeholder": "{NOME_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NACIONALIDADE_INTERVENIENTES",
-          "placeholder": "{NACIONALIDADE_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "EST_CIVIL_INTERVENIENTES",
-          "placeholder": "{EST_CIVIL_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "PROFISSAO_INTERVENIENTES",
-          "placeholder": "{PROFISSAO_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "RG_INTERVENIENTES",
-          "placeholder": "{RG_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "CPF_INTERVENIENTES",
-          "placeholder": "{CPF_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_LOGRADOURO_INTERVENIENTES",
-          "placeholder": "{END_LOGRADOURO_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_BAIRRO_INTERVENIENTES",
-          "placeholder": "{END_BAIRRO_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_NUMERO_INTERVENIENTES",
-          "placeholder": "{END_NUMERO_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_CIDADE_INTERVENIENTES",
-          "placeholder": "{END_CIDADE_INTERVENIENTES}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_UF_INTERVENIENTES",
-          "placeholder": "{END_UF_INTERVENIENTES}"
         }
       ]
     }
