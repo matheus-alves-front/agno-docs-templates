@@ -2,6 +2,7 @@ from typing import Dict, Any
 from docx import Document
 import re
 import os
+from collections import OrderedDict
 from .logging_utils import setup_logger, jlog
 
 PLACEHOLDER_RE = re.compile(r"\{([A-Z0-9_]+)(?::([^}]+))?\}")
@@ -70,11 +71,12 @@ def build_spec_from_docx(path: str) -> Dict[str, Any]:
 
     data = read_docx_placeholders(path)
     placeholders = data["placeholders"]
-    all_names = data["all_names"]
+    all_names = list(dict.fromkeys(data["all_names"]))
     jlog(logger, "INFO", "INDEX_PLACEHOLDERS", file=filename, count=len(placeholders))
 
     entities = set()
-    fields = []
+    fields_by_key: "OrderedDict[tuple[str, str], Dict[str, Any]]" = OrderedDict()
+    entity_max_indices: Dict[str, int] = {}
     for placeholder in placeholders:
         name = placeholder["name"]
         parts = name.split("_")
@@ -90,8 +92,23 @@ def build_spec_from_docx(path: str) -> Dict[str, Any]:
         if entity:
             entities.add(entity)
 
-        fields.append({"entity": entity or "GLOBAL", "name": base, "placeholder": placeholder["raw"]})
+        key = (entity or "GLOBAL", base)
+        if key not in fields_by_key:
+            fields_by_key[key] = {
+                "entity": entity or "GLOBAL",
+                "name": base,
+                "placeholder": placeholder["raw"],
+            }
 
+        if entity and len(parts) >= 3 and parts[-1].isdigit():
+            try:
+                idx = int(parts[-1])
+            except ValueError:
+                idx = 1
+            if idx >= 1:
+                entity_max_indices[entity] = max(entity_max_indices.get(entity, 1), idx)
+
+    fields = list(fields_by_key.values())
     groups = []
     gid = 1
     for entity in sorted(x for x in entities if x != "GLOBAL"):
@@ -105,6 +122,8 @@ def build_spec_from_docx(path: str) -> Dict[str, Any]:
 
     multiplicity = infer_multiplicity_from_filename(path)
     meta = {"casais": "_OU_CASAIS" in filename}
+    if entity_max_indices:
+        meta["inferred_counts"] = entity_max_indices
     spec = {
         "name": os.path.splitext(filename)[0],
         "source": filename,

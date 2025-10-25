@@ -28,6 +28,11 @@
       "fields": [
         {
           "entity": "GLOBAL",
+          "name": "DIA_EXTENSO",
+          "placeholder": "{DIA_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
           "name": "DIA_NUMERAL",
           "placeholder": "{DIA_NUMERAL}"
         },
@@ -195,116 +200,6 @@
           "entity": "GLOBAL",
           "name": "END_UF_PROCURADORA",
           "placeholder": "{END_UF_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NOME_PROCURADORA",
-          "placeholder": "{NOME_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NACIONALIDADE_PROCURADORA",
-          "placeholder": "{NACIONALIDADE_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "EST_CIVIL_PROCURADORA",
-          "placeholder": "{EST_CIVIL_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "PROFISSAO_PROCURADORA",
-          "placeholder": "{PROFISSAO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "RG_PROCURADORA",
-          "placeholder": "{RG_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "CPF_PROCURADORA",
-          "placeholder": "{CPF_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_LOGRADOURO_PROCURADORA",
-          "placeholder": "{END_LOGRADOURO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_BAIRRO_PROCURADORA",
-          "placeholder": "{END_BAIRRO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_NUMERO_PROCURADORA",
-          "placeholder": "{END_NUMERO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_CIDADE_PROCURADORA",
-          "placeholder": "{END_CIDADE_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_UF_PROCURADORA",
-          "placeholder": "{END_UF_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NOME_PROCURADORA",
-          "placeholder": "{NOME_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "NACIONALIDADE_PROCURADORA",
-          "placeholder": "{NACIONALIDADE_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "EST_CIVIL_PROCURADORA",
-          "placeholder": "{EST_CIVIL_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "PROFISSAO_PROCURADORA",
-          "placeholder": "{PROFISSAO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "RG_PROCURADORA",
-          "placeholder": "{RG_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "CPF_PROCURADORA",
-          "placeholder": "{CPF_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_LOGRADOURO_PROCURADORA",
-          "placeholder": "{END_LOGRADOURO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_BAIRRO_PROCURADORA",
-          "placeholder": "{END_BAIRRO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_NUMERO_PROCURADORA",
-          "placeholder": "{END_NUMERO_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_CIDADE_PROCURADORA",
-          "placeholder": "{END_CIDADE_PROCURADORA}"
-        },
-        {
-          "entity": "GLOBAL",
-          "name": "END_UF_PROCURADORA",
-          "placeholder": "{END_UF_PROCURADORA}"
         }
       ]
     }
@@ -313,6 +208,7 @@
     "casais": false
   },
   "all_placeholders": [
+    "DIA_EXTENSO",
     "DIA_NUMERAL",
     "MES_EXTENSO",
     "ANO_EXTENSO",
@@ -338,28 +234,6 @@
     "END_NUMERO_SOCIA",
     "END_CIDADE_SOCIA",
     "END_UF_SOCIA",
-    "NOME_PROCURADORA",
-    "NACIONALIDADE_PROCURADORA",
-    "EST_CIVIL_PROCURADORA",
-    "PROFISSAO_PROCURADORA",
-    "RG_PROCURADORA",
-    "CPF_PROCURADORA",
-    "END_LOGRADOURO_PROCURADORA",
-    "END_BAIRRO_PROCURADORA",
-    "END_NUMERO_PROCURADORA",
-    "END_CIDADE_PROCURADORA",
-    "END_UF_PROCURADORA",
-    "NOME_PROCURADORA",
-    "NACIONALIDADE_PROCURADORA",
-    "EST_CIVIL_PROCURADORA",
-    "PROFISSAO_PROCURADORA",
-    "RG_PROCURADORA",
-    "CPF_PROCURADORA",
-    "END_LOGRADOURO_PROCURADORA",
-    "END_BAIRRO_PROCURADORA",
-    "END_NUMERO_PROCURADORA",
-    "END_CIDADE_PROCURADORA",
-    "END_UF_PROCURADORA",
     "NOME_PROCURADORA",
     "NACIONALIDADE_PROCURADORA",
     "EST_CIVIL_PROCURADORA",

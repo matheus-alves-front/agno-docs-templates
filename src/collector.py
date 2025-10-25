@@ -26,10 +26,37 @@ def choose_entities_v(entities: List[str]) -> List[str]:
     return [entity for entity in chosen if entity in entities]
 
 
-def collect_counts_for_v(v_entities: List[str], casais: bool) -> Dict[str, int]:
+def infer_counts_from_spec(spec: Dict[str, Any]) -> Dict[str, int]:
+    counts: Dict[str, int] = {}
+    meta_counts = (spec.get("meta") or {}).get("inferred_counts") or {}
+    for entity, value in meta_counts.items():
+        try:
+            ivalue = int(value)
+        except (TypeError, ValueError):
+            continue
+        if ivalue >= 1:
+            counts[entity] = max(counts.get(entity, 1), ivalue)
+
+    if not counts:
+        entities = set(spec.get("entities", []))
+        for name in spec.get("all_placeholders", []):
+            parts = name.split("_")
+            if len(parts) >= 3 and parts[-2] in entities and parts[-1].isdigit():
+                entity = parts[-2]
+                try:
+                    idx = int(parts[-1])
+                except ValueError:
+                    continue
+                counts[entity] = max(counts.get(entity, 1), idx)
+    return counts
+
+
+def collect_counts_for_v(v_entities: List[str], casais: bool, defaults: Dict[str, int]) -> Dict[str, int]:
     counts: Dict[str, int] = {}
     for entity in v_entities:
-        default_n = 2 if casais else 1
+        default_n = defaults.get(entity, 0)
+        if default_n < 1:
+            default_n = 2 if casais else 1
         while True:
             text = ask(f"Quantos registros para '{entity}'?", str(default_n))
             if text.isdigit() and int(text) >= 1:
@@ -56,23 +83,25 @@ def collect_for_spec(spec: Dict[str, Any], use_llm: bool = False) -> Dict[str, s
     entities = [entity for entity in spec.get("entities", []) if entity != "GLOBAL"]
     casais = bool((spec.get("meta") or {}).get("casais"))
     all_names = spec.get("all_placeholders", [])
+    inferred_counts = infer_counts_from_spec(spec)
 
-    jlog(
-        logger,
-        "INFO",
-        "RUN_LOAD_SPEC",
-        slug=spec.get("name", ""),
-        multiplicity=multiplicity,
-        entities=entities,
-        casais=casais,
-    )
     print(f"\nIniciando coleta para: {spec['name']}  | multiplicidade: {multiplicity}")
 
     v_entities: List[str] = []
     if "V" in multiplicity:
-        v_entities = choose_entities_v(entities)
+        auto_v = sorted([entity for entity, count in inferred_counts.items() if count > 1 and entity in entities])
+        if auto_v:
+            print("Detectei automaticamente entidades 'V':", ", ".join(auto_v))
+            jlog(logger, "INFO", "RUN_CHOOSE_V_AUTO", v_entities=auto_v)
+            v_entities.extend(auto_v)
+        remaining = [entity for entity in entities if entity not in v_entities]
+        if remaining:
+            manual_v = choose_entities_v(remaining)
+            if manual_v:
+                v_entities.extend(entity for entity in manual_v if entity not in v_entities)
+                jlog(logger, "INFO", "RUN_CHOOSE_V_MANUAL", v_entities=manual_v)
         jlog(logger, "INFO", "RUN_CHOOSE_V", v_entities=v_entities)
-        v_counts = collect_counts_for_v(v_entities, casais)
+        v_counts = collect_counts_for_v(v_entities, casais, inferred_counts)
     else:
         v_counts = {}
 

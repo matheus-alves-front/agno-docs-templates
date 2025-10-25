@@ -65,61 +65,6 @@
           "entity": "OUTORGADO",
           "name": "END_UF",
           "placeholder": "{END_UF_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "NOME",
-          "placeholder": "{NOME_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "NACIONALIDADE",
-          "placeholder": "{NACIONALIDADE_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "EST_CIVIL",
-          "placeholder": "{EST_CIVIL_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "PROFISSAO",
-          "placeholder": "{PROFISSAO_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "RG",
-          "placeholder": "{RG_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "CPF",
-          "placeholder": "{CPF_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "END_LOGRADOURO",
-          "placeholder": "{END_LOGRADOURO_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "END_BAIRRO",
-          "placeholder": "{END_BAIRRO_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "END_NUMERO",
-          "placeholder": "{END_NUMERO_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "END_CIDADE",
-          "placeholder": "{END_CIDADE_OUTORGADO}"
-        },
-        {
-          "entity": "OUTORGADO",
-          "name": "END_UF",
-          "placeholder": "{END_UF_OUTORGADO}"
         }
       ]
     },
@@ -236,17 +181,6 @@
     "END_NUMERO_OUTORGANTE",
     "END_CIDADE_OUTORGANTE",
     "END_UF_OUTORGANTE",
-    "NOME_OUTORGADO",
-    "NACIONALIDADE_OUTORGADO",
-    "EST_CIVIL_OUTORGADO",
-    "PROFISSAO_OUTORGADO",
-    "RG_OUTORGADO",
-    "CPF_OUTORGADO",
-    "END_LOGRADOURO_OUTORGADO",
-    "END_BAIRRO_OUTORGADO",
-    "END_NUMERO_OUTORGADO",
-    "END_CIDADE_OUTORGADO",
-    "END_UF_OUTORGADO",
     "NOME_OUTORGADO",
     "NACIONALIDADE_OUTORGADO",
     "EST_CIVIL_OUTORGADO",
