@@ -1,105 +1,123 @@
-from typing import List, Dict, Any
+from typing import Dict, Any
 from docx import Document
-import re, os
-from rapidfuzz import fuzz
+import re
+import os
+from .logging_utils import setup_logger, jlog
 
 PLACEHOLDER_RE = re.compile(r"\{([A-Z0-9_]+)(?::([^}]+))?\}")
-
 ENTITY_SUFFIXES = {
-    "OUTORGANTE","OUTORGADO","COMPRADOR","VENDEDOR","DOADOR","DONATARIO",
-    "PF","PJ","DEVEDOR","CREDOR","OUTORGADA","OUTORGANTES","OUTORGADOS",
-    "COMPRADORA","VENDEDORA"
+    "OUTORGANTE",
+    "OUTORGADO",
+    "COMPRADOR",
+    "VENDEDOR",
+    "DOADOR",
+    "DONATARIO",
+    "PF",
+    "PJ",
+    "DEVEDOR",
+    "CREDOR",
+    "OUTORGADA",
+    "OUTORGANTES",
+    "OUTORGADOS",
+    "COMPRADORA",
+    "VENDEDORA",
 }
+
 
 def read_docx_placeholders(path: str) -> Dict[str, Any]:
     doc = Document(path)
+    texts = []
 
-    def iter_texts():
-        for p in doc.paragraphs:
-            t = p.text.strip()
-            if t: yield t
-        for tbl in doc.tables:
-            for row in tbl.rows:
-                for cell in row.cells:
-                    t = cell.text.strip()
-                    if t: yield t
+    for paragraph in doc.paragraphs:
+        text = (paragraph.text or "").strip()
+        if text:
+            texts.append(text)
+    for table in doc.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                text = (cell.text or "").strip()
+                if text:
+                    texts.append(text)
 
-    texts = list(iter_texts())
-    placeholders = []
-    titles = []
-    all_names = []
-
-    for t in texts:
-        for m in PLACEHOLDER_RE.finditer(t):
-            name = m.group(1)
-            placeholders.append({"raw": m.group(0), "name": name, "hint": m.group(2) or ""})
+    placeholders, titles, all_names = [], [], []
+    for text in texts:
+        for match in PLACEHOLDER_RE.finditer(text):
+            name = match.group(1)
+            placeholders.append({"raw": match.group(0), "name": name, "hint": match.group(2) or ""})
             all_names.append(name)
-
-        up = t.upper()
-        if (t.endswith(":") or up.isupper()) and len(t) < 120:
-            titles.append(t.strip())
+        upper = text.upper()
+        if (text.endswith(":") or upper.isupper()) and len(text) < 120:
+            titles.append(text.strip())
 
     return {"texts": texts, "placeholders": placeholders, "titles": titles, "all_names": all_names}
 
+
 def infer_multiplicity_from_filename(fname: str) -> str:
     base = os.path.basename(fname)
-    if "_V_V" in base: return "[V-V]"
-    if "_V_1" in base: return "[V-1]"
-    if "_1_V" in base: return "[1-V]"
+    if "_V_V" in base:
+        return "[V-V]"
+    if "_V_1" in base:
+        return "[V-1]"
+    if "_1_V" in base:
+        return "[1-V]"
     return "[1-1]"
 
+
 def build_spec_from_docx(path: str) -> Dict[str, Any]:
+    logger = setup_logger()
+    filename = os.path.basename(path)
+    jlog(logger, "INFO", "INDEX_START", file=filename)
+
     data = read_docx_placeholders(path)
     placeholders = data["placeholders"]
     all_names = data["all_names"]
+    jlog(logger, "INFO", "INDEX_PLACEHOLDERS", file=filename, count=len(placeholders))
 
-    ents = set()
+    entities = set()
     fields = []
-    for ph in placeholders:
-        name = ph["name"]
+    for placeholder in placeholders:
+        name = placeholder["name"]
         parts = name.split("_")
-        ent = None
+        entity = None
         base = name
-        if len(parts) >= 2:
-            tail = parts[-1]
-            # trata nomes já numerados: ..._<ENTIDADE>_<idx>
-            if len(parts) >= 3 and parts[-2] in ENTITY_SUFFIXES and parts[-1].isdigit():
-                ent = parts[-2]
-                base = "_".join(parts[:-2])  # remove _ENTIDADE_<idx>
-            elif tail in ENTITY_SUFFIXES:
-                ent = tail
-                base = "_".join(parts[:-1])  # remove _ENTIDADE
-        if ent:
-            ents.add(ent)
+        if len(parts) >= 3 and parts[-2] in ENTITY_SUFFIXES and parts[-1].isdigit():
+            entity = parts[-2]
+            base = "_".join(parts[:-2])
+        elif len(parts) >= 2 and parts[-1] in ENTITY_SUFFIXES:
+            entity = parts[-1]
+            base = "_".join(parts[:-1])
 
-        fields.append({
-            "entity": ent or "GLOBAL",
-            "name": base,
-            "placeholder": ph["raw"]
-        })
+        if entity:
+            entities.add(entity)
 
-    # grupos sugeridos: Qualificação por entidade + Global
+        fields.append({"entity": entity or "GLOBAL", "name": base, "placeholder": placeholder["raw"]})
+
     groups = []
     gid = 1
-    for e in sorted(x for x in ents if x not in {"GLOBAL"}):
-        gfields = [f for f in fields if f["entity"] == e]
-        if gfields:
-            groups.append({"id": f"G{gid}", "label": f"Qualificação {e}", "fields": gfields})
+    for entity in sorted(x for x in entities if x != "GLOBAL"):
+        entity_fields = [field for field in fields if field["entity"] == entity]
+        if entity_fields:
+            groups.append({"id": f"G{gid}", "label": f"Qualificação {entity}", "fields": entity_fields})
             gid += 1
-    gglobals = [f for f in fields if f["entity"] == "GLOBAL"]
-    if gglobals:
-        groups.append({"id": f"G{gid}", "label": "Dados do Ato", "fields": gglobals})
+    global_fields = [field for field in fields if field["entity"] == "GLOBAL"]
+    if global_fields:
+        groups.append({"id": f"G{gid}", "label": "Dados do Ato", "fields": global_fields})
 
+    multiplicity = infer_multiplicity_from_filename(path)
+    meta = {"casais": "_OU_CASAIS" in filename}
     spec = {
-        "name": os.path.splitext(os.path.basename(path))[0],
-        "source": os.path.basename(path),
-        "multiplicity": infer_multiplicity_from_filename(path),
-        "entities": sorted(list(ents)) or ["PESSOA"],
+        "name": os.path.splitext(filename)[0],
+        "source": filename,
+        "multiplicity": multiplicity,
+        "entities": sorted(list(entities)) or [],
         "groups": groups,
-        "meta": {
-            "casais": "_OU_CASAIS" in os.path.basename(path),
-        },
-        # NOVO: nomes crus de todos os placeholders para o coletor checar variantes numeradas
-        "all_placeholders": all_names
+        "meta": meta,
+        "all_placeholders": all_names,
     }
+    entities_payload = list(spec["entities"])
+    if global_fields:
+        entities_payload.append("GLOBAL")
+    jlog(logger, "INFO", "INDEX_ENTITIES", file=filename, entities=entities_payload)
+    jlog(logger, "INFO", "INDEX_MULTIPLICITY", file=filename, multiplicity=multiplicity, casais=meta["casais"])
+
     return spec
