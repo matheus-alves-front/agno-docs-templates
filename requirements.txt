@@ -1,0 +1,6 @@
+python-docx>=1.1,<2
+python-dotenv>=1.0,<2
+pydantic>=2.7,<3
+rapidfuzz>=3.9,<4
+agno==2.*
+ollama>=0.2,<1

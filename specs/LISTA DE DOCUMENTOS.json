@@ -1,0 +1,13 @@
+{
+  "name": "LISTA DE DOCUMENTOS",
+  "source": "LISTA DE DOCUMENTOS.docx",
+  "multiplicity": "[1-1]",
+  "entities": [
+    "PESSOA"
+  ],
+  "groups": [],
+  "meta": {
+    "casais": false
+  },
+  "all_placeholders": []
+}

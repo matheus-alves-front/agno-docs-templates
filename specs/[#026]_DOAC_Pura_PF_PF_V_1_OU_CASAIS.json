@@ -1,0 +1,335 @@
+{
+  "name": "[#026]_DOAC_Pura_PF_PF_V_1_OU_CASAIS",
+  "source": "[#026]_DOAC_Pura_PF_PF_V_1_OU_CASAIS.docx",
+  "multiplicity": "[V-1]",
+  "entities": [
+    "DOADOR",
+    "DONATARIO",
+    "OUTORGANTE"
+  ],
+  "groups": [
+    {
+      "id": "G1",
+      "label": "Qualificação DOADOR",
+      "fields": [
+        {
+          "entity": "DOADOR",
+          "name": "NOME",
+          "placeholder": "{NOME_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "RG",
+          "placeholder": "{RG_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "CPF",
+          "placeholder": "{CPF_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_UF",
+          "placeholder": "{END_UF_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "NOME",
+          "placeholder": "{NOME_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "RG",
+          "placeholder": "{RG_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "CPF",
+          "placeholder": "{CPF_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_UF",
+          "placeholder": "{END_UF_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "NOME",
+          "placeholder": "{NOME_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "RG",
+          "placeholder": "{RG_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "CPF",
+          "placeholder": "{CPF_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_DOADOR}"
+        },
+        {
+          "entity": "DOADOR",
+          "name": "END_UF",
+          "placeholder": "{END_UF_DOADOR}"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "label": "Qualificação DONATARIO",
+      "fields": [
+        {
+          "entity": "DONATARIO",
+          "name": "NOME",
+          "placeholder": "{NOME_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "RG",
+          "placeholder": "{RG_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "CPF",
+          "placeholder": "{CPF_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_DONATARIO}"
+        },
+        {
+          "entity": "DONATARIO",
+          "name": "END_UF",
+          "placeholder": "{END_UF_DONATARIO}"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "label": "Qualificação OUTORGANTE",
+      "fields": [
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_OUTORGANTE}"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "label": "Dados do Ato",
+      "fields": [
+        {
+          "entity": "GLOBAL",
+          "name": "DIA_EXTENSO",
+          "placeholder": "{DIA_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "DIA_NUMERAL",
+          "placeholder": "{DIA_NUMERAL}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "MES_EXTENSO",
+          "placeholder": "{MES_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "ANO_EXTENSO",
+          "placeholder": "{ANO_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "ANO_NUMERAL",
+          "placeholder": "{ANO_NUMERAL}"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "casais": true
+  },
+  "all_placeholders": [
+    "DIA_EXTENSO",
+    "DIA_NUMERAL",
+    "MES_EXTENSO",
+    "ANO_EXTENSO",
+    "ANO_NUMERAL",
+    "NOME_DOADOR",
+    "NACIONALIDADE_DOADOR",
+    "EST_CIVIL_DOADOR",
+    "PROFISSAO_DOADOR",
+    "RG_DOADOR",
+    "CPF_DOADOR",
+    "END_LOGRADOURO_DOADOR",
+    "END_BAIRRO_DOADOR",
+    "END_NUMERO_DOADOR",
+    "END_CIDADE_OUTORGANTE",
+    "END_UF_DOADOR",
+    "NOME_DOADOR",
+    "NACIONALIDADE_DOADOR",
+    "EST_CIVIL_DOADOR",
+    "PROFISSAO_DOADOR",
+    "RG_DOADOR",
+    "CPF_DOADOR",
+    "END_LOGRADOURO_DOADOR",
+    "END_BAIRRO_DOADOR",
+    "END_NUMERO_DOADOR",
+    "END_CIDADE_OUTORGANTE",
+    "END_UF_DOADOR",
+    "NOME_DOADOR",
+    "NACIONALIDADE_DOADOR",
+    "EST_CIVIL_DOADOR",
+    "PROFISSAO_DOADOR",
+    "RG_DOADOR",
+    "CPF_DOADOR",
+    "END_LOGRADOURO_DOADOR",
+    "END_BAIRRO_DOADOR",
+    "END_NUMERO_DOADOR",
+    "END_CIDADE_DOADOR",
+    "END_UF_DOADOR",
+    "NOME_DONATARIO",
+    "NACIONALIDADE_DONATARIO",
+    "EST_CIVIL_DONATARIO",
+    "PROFISSAO_DONATARIO",
+    "RG_DONATARIO",
+    "CPF_DONATARIO",
+    "END_LOGRADOURO_DONATARIO",
+    "END_BAIRRO_DONATARIO",
+    "END_NUMERO_DONATARIO",
+    "END_CIDADE_DONATARIO",
+    "END_UF_DONATARIO"
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "name": "[#018]_VENDA_Cond_PF_PF_1_1_OU_CASAIS",
+  "source": "[#018]_VENDA_Cond_PF_PF_1_1_OU_CASAIS.docx",
+  "multiplicity": "[1-1]",
+  "entities": [
+    "OUTORGADO",
+    "OUTORGANTE"
+  ],
+  "groups": [
+    {
+      "id": "G1",
+      "label": "Qualificação OUTORGADO",
+      "fields": [
+        {
+          "entity": "OUTORGADO",
+          "name": "NOME",
+          "placeholder": "{NOME_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "RG",
+          "placeholder": "{RG_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "CPF",
+          "placeholder": "{CPF_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_UF",
+          "placeholder": "{END_UF_OUTORGADO}"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "label": "Qualificação OUTORGANTE",
+      "fields": [
+        {
+          "entity": "OUTORGANTE",
+          "name": "NOME",
+          "placeholder": "{NOME_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "RG",
+          "placeholder": "{RG_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "CPF",
+          "placeholder": "{CPF_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "END_UF",
+          "placeholder": "{END_UF_OUTORGANTE}"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "label": "Dados do Ato",
+      "fields": [
+        {
+          "entity": "GLOBAL",
+          "name": "DIA_EXTENSO",
+          "placeholder": "{DIA_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "DIA_NUMERAL",
+          "placeholder": "{DIA_NUMERAL}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "MES_EXTENSO",
+          "placeholder": "{MES_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "ANO_EXTENSO",
+          "placeholder": "{ANO_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "ANO_NUMERAL",
+          "placeholder": "{ANO_NUMERAL}"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "casais": true
+  },
+  "all_placeholders": [
+    "DIA_EXTENSO",
+    "DIA_NUMERAL",
+    "MES_EXTENSO",
+    "ANO_EXTENSO",
+    "ANO_NUMERAL",
+    "NOME_OUTORGANTE",
+    "NACIONALIDADE_OUTORGANTE",
+    "EST_CIVIL_OUTORGANTE",
+    "PROFISSAO_OUTORGANTE",
+    "RG_OUTORGANTE",
+    "CPF_OUTORGANTE",
+    "END_LOGRADOURO_OUTORGANTE",
+    "END_BAIRRO_OUTORGANTE",
+    "END_NUMERO_OUTORGANTE",
+    "END_CIDADE_OUTORGANTE",
+    "END_UF_OUTORGANTE",
+    "NOME_OUTORGADO",
+    "NACIONALIDADE_OUTORGADO",
+    "EST_CIVIL_OUTORGADO",
+    "PROFISSAO_OUTORGADO",
+    "RG_OUTORGADO",
+    "CPF_OUTORGADO",
+    "END_LOGRADOURO_OUTORGADO",
+    "END_BAIRRO_OUTORGADO",
+    "END_NUMERO_OUTORGADO",
+    "END_CIDADE_OUTORGADO",
+    "END_UF_OUTORGADO"
+  ]
+}

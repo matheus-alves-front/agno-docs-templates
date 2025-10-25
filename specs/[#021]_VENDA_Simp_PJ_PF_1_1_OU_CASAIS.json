@@ -1,0 +1,256 @@
+{
+  "name": "[#021]_VENDA_Simp_PJ_PF_1_1_OU_CASAIS",
+  "source": "[#021]_VENDA_Simp_PJ_PF_1_1_OU_CASAIS.docx",
+  "multiplicity": "[1-1]",
+  "entities": [
+    "OUTORGADO",
+    "OUTORGANTE"
+  ],
+  "groups": [
+    {
+      "id": "G1",
+      "label": "Qualificação OUTORGADO",
+      "fields": [
+        {
+          "entity": "OUTORGADO",
+          "name": "NOME",
+          "placeholder": "{NOME_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "NACIONALIDADE",
+          "placeholder": "{NACIONALIDADE_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "PROFISSAO",
+          "placeholder": "{PROFISSAO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "RG",
+          "placeholder": "{RG_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "CPF",
+          "placeholder": "{CPF_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_LOGRADOURO",
+          "placeholder": "{END_LOGRADOURO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_BAIRRO",
+          "placeholder": "{END_BAIRRO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_NUMERO",
+          "placeholder": "{END_NUMERO_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_CIDADE",
+          "placeholder": "{END_CIDADE_OUTORGADO}"
+        },
+        {
+          "entity": "OUTORGADO",
+          "name": "END_UF",
+          "placeholder": "{END_UF_OUTORGADO}"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "label": "Qualificação OUTORGANTE",
+      "fields": [
+        {
+          "entity": "OUTORGANTE",
+          "name": "CNPJ",
+          "placeholder": "{CNPJ_OUTORGANTE}"
+        },
+        {
+          "entity": "OUTORGANTE",
+          "name": "EST_CIVIL",
+          "placeholder": "{EST_CIVIL_OUTORGANTE}"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "label": "Dados do Ato",
+      "fields": [
+        {
+          "entity": "GLOBAL",
+          "name": "DIA_EXTENSO",
+          "placeholder": "{DIA_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "DIA_NUMERAL",
+          "placeholder": "{DIA_NUMERAL}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "MES_EXTENSO",
+          "placeholder": "{MES_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "ANO_EXTENSO",
+          "placeholder": "{ANO_EXTENSO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "ANO_NUMERAL",
+          "placeholder": "{ANO_NUMERAL}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "NOME_EMPRESA",
+          "placeholder": "{NOME_EMPRESA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_LOGRADOURO_EMPRESA",
+          "placeholder": "{END_LOGRADOURO_EMPRESA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_BAIRRO_EMPRESA",
+          "placeholder": "{END_BAIRRO_EMPRESA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_NUMERO_EMPRESA",
+          "placeholder": "{END_NUMERO_EMPRESA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_CIDADE_EMPRESA",
+          "placeholder": "{END_CIDADE_EMPRESA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_UF_EMPRESA",
+          "placeholder": "{END_UF_EMPRESA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "DATA_CONTRATO",
+          "placeholder": "{DATA_CONTRATO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "N_REGISTRO",
+          "placeholder": "{N_REGISTRO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "N_ARQUIVO",
+          "placeholder": "{N_ARQUIVO}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "NOME_SOCIA",
+          "placeholder": "{NOME_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "NACIONALIDADE_SOCIA",
+          "placeholder": "{NACIONALIDADE_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "PROFISSAO_SOCIA",
+          "placeholder": "{PROFISSAO_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "RG_SOCIA",
+          "placeholder": "{RG_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "CPF_SOCIA",
+          "placeholder": "{CPF_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_LOGRADOURO_SOCIA",
+          "placeholder": "{END_LOGRADOURO_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_BAIRRO_SOCIA",
+          "placeholder": "{END_BAIRRO_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_NUMERO_SOCIA",
+          "placeholder": "{END_NUMERO_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_CIDADE_SOCIA",
+          "placeholder": "{END_CIDADE_SOCIA}"
+        },
+        {
+          "entity": "GLOBAL",
+          "name": "END_UF_SOCIA",
+          "placeholder": "{END_UF_SOCIA}"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "casais": true
+  },
+  "all_placeholders": [
+    "DIA_EXTENSO",
+    "DIA_NUMERAL",
+    "MES_EXTENSO",
+    "ANO_EXTENSO",
+    "ANO_NUMERAL",
+    "NOME_EMPRESA",
+    "END_LOGRADOURO_EMPRESA",
+    "END_BAIRRO_EMPRESA",
+    "END_NUMERO_EMPRESA",
+    "END_CIDADE_EMPRESA",
+    "END_UF_EMPRESA",
+    "CNPJ_OUTORGANTE",
+    "DATA_CONTRATO",
+    "N_REGISTRO",
+    "N_ARQUIVO",
+    "NOME_SOCIA",
+    "NACIONALIDADE_SOCIA",
+    "EST_CIVIL_OUTORGANTE",
+    "PROFISSAO_SOCIA",
+    "RG_SOCIA",
+    "CPF_SOCIA",
+    "END_LOGRADOURO_SOCIA",
+    "END_BAIRRO_SOCIA",
+    "END_NUMERO_SOCIA",
+    "END_CIDADE_SOCIA",
+    "END_UF_SOCIA",
+    "NOME_OUTORGADO",
+    "NACIONALIDADE_OUTORGADO",
+    "EST_CIVIL_OUTORGADO",
+    "PROFISSAO_OUTORGADO",
+    "RG_OUTORGADO",
+    "CPF_OUTORGADO",
+    "END_LOGRADOURO_OUTORGADO",
+    "END_BAIRRO_OUTORGADO",
+    "END_NUMERO_OUTORGADO",
+    "END_CIDADE_OUTORGADO",
+    "END_UF_OUTORGADO"
+  ]
+}
